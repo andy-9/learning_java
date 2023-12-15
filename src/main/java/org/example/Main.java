@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
@@ -15,5 +17,14 @@ public class Main {
             // for you, but you can always add more by pressing Strg+F8.
             System.out.println("i = " + i);
         }
+
+        testInput();
+    }
+
+    public static void testInput() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+        System.out.printf("%s! What a wonderful name! \uD83D\uDE00", name);
     }
 }
