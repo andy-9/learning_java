@@ -8,17 +8,13 @@ public class Main {
     public static void main(String[] args) {
         // Press Alt+Eingabe with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!\n");
+        //System.out.print("Hello and welcome!\n");
 
-        // Press Umschalt+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i < 5; i++) {
+        char unicodeChar = '\u03A9';
+        System.out.println(unicodeChar);
 
-            // Press Umschalt+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Strg+F8.
-            System.out.println("i = " + i);
-        }
-
-        testInput();
+        //testInput();
+        testArray();
     }
 
     public static void testInput() {
@@ -26,5 +22,16 @@ public class Main {
         System.out.print("Enter your name: ");
         String name = sc.nextLine();
         System.out.printf("%s! What a wonderful name! \uD83D\uDE00", name);
+    }
+
+    public static void testArray() {
+        int[] arr = new int[5];
+        System.out.println("length of array: " + arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = 2 * i;
+        }
+        for (int i : arr) {
+            System.out.println(i);
+        }
     }
 }
