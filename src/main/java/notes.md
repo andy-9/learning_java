@@ -6,6 +6,7 @@
 * package names are lowercase and with dots or underscores (`com.example.myapp_1`). Dots indicate a hierarchy of packages (package `com` contains package example which contains package `myapp_1`).
 
 ## variables
+* A literal is data that has been typed directly in the code (hardcoded, e.g. `String s = "Hello World!";`)
 * int x = 10; (int is a primitive type)  
 * Integer x = 10; (Integer is a class)  
 
@@ -32,6 +33,8 @@
     anArray[0] = 100; // initialize first element
     anArray[1] = 200; // initialize second element
     anArray[2] = 300; // etc.
+  
+  int[] exArray = { 100, 200, 300 };
     ```
 * **ArrayList**: The ArrayList class extends AbstractList and implements the List interface. ArrayList supports dynamic arrays that can grow as needed.
     ```java
@@ -41,6 +44,9 @@
     al.add("C");
     al.add("D");
     al.add("E");
+  
+    ArrayList<String> myArrayList = new ArrayList<>(Arrays.asList("Apple", "Banana", "Orange"));
+
     ```
 * **HashMap**: A HashMap however, store items in "key/value" pairs, and you can access them by an index of another type (e.g. a String). One object is used as a key (index) to another object (value). It can store different types: String keys and Integer values, or the same type, like: String keys and String values.
     ```java
@@ -51,3 +57,21 @@
     capitalCities.put("USA", "Washington DC");
     ```
 
+### type casting
+* **implicit type casting**: byte -> short -> int -> long -> float -> double
+* **explicit type casting**: double -> float -> long -> int -> short -> byte
+* ```java
+    double d = 100.04; (100.04)
+    long l = (long) d; (100)
+    int i = (int) l; (100)
+  ```
+* ```java
+    int num1 = 10;
+    int num2 = 3;
+    double division = (double) num1 / num2; (3.3333333333333333)
+  ```
+* **type casting with wrapper classes**: `Integer.parseInt("123")` converts a String to an int, `Integer.toString(123)` converts an int to a String
+
+
+## Methods
+* `nextline()` reads the entire line of input, `next()` will read only the first word. `nextInt()` reads the next token as an int. `nextDouble()` reads the next token as a double.

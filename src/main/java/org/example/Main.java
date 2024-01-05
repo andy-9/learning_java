@@ -10,18 +10,34 @@ public class Main {
         // IntelliJ IDEA suggests fixing it.
         //System.out.print("Hello and welcome!\n");
 
-        char unicodeChar = '\u03A9';
-        System.out.println(unicodeChar);
-
-        //testInput();
-        testArray();
+        testInput();
+        //testArray();
     }
 
     public static void testInput() {
         Scanner sc = new Scanner(System.in);
+
         System.out.print("Enter your name: ");
+        while (!sc.hasNextLine()) {
+            System.out.println("Invalid input. Please enter a valid name.");
+            sc.next();
+        }
         String name = sc.nextLine();
-        System.out.printf("%s! What a wonderful name! \uD83D\uDE00", name);
+        if (name.equals("andy")) {
+            System.out.printf("You are awesome, %s \uD83D\uDC4D\n", name);
+        } else {
+        System.out.printf("%s! What a wonderful name! \uD83D\uDE00\n", name);
+        }
+
+        System.out.print("Enter your age as a double: ");
+        while (!sc.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a valid double.");
+            sc.next();
+        }
+        double age = sc.nextDouble();
+
+        System.out.printf("%s! What a wonderful name! \uD83D\uDE00 You are %s years old.", name, age);
+
     }
 
     public static void testArray() {
