@@ -10,34 +10,48 @@ public class Main {
         // IntelliJ IDEA suggests fixing it.
         //System.out.print("Hello and welcome!\n");
 
-        testInput();
+        //testInput();
         //testArray();
+        //ageDoubled();
+        //numberOfCharacters();
+        int amountPerPerson = splitBill(100, 5);
+        System.out.println("Amount per person: € " + amountPerPerson);
     }
 
-    public static void testInput() {
+    public static int splitBill(int billTotal, int numPeople) {
+        return billTotal / numPeople;
+    }
+
+    public static void numberOfCharacters() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter your name: ");
-        while (!sc.hasNextLine()) {
-            System.out.println("Invalid input. Please enter a valid name.");
+        while (!sc.hasNext("[a-zA-Z]+")) {
+            System.out.println("Invalid input. Please enter a name.");
             sc.next();
         }
+
         String name = sc.nextLine();
-        if (name.equals("andy")) {
-            System.out.printf("You are awesome, %s \uD83D\uDC4D\n", name);
-        } else {
-        System.out.printf("%s! What a wonderful name! \uD83D\uDE00\n", name);
-        }
 
-        System.out.print("Enter your age as a double: ");
-        while (!sc.hasNextDouble()) {
-            System.out.println("Invalid input. Please enter a valid double.");
+        System.out.println("Your name has " + name.length() + " characters.");
+    }
+
+    public static void ageDoubled() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        while (!sc.hasNextInt()) {
+            System.out.println("Invalid input. Please enter a whole number.");
             sc.next();
         }
-        double age = sc.nextDouble();
 
-        System.out.printf("%s! What a wonderful name! \uD83D\uDE00 You are %s years old.", name, age);
+        int age = sc.nextInt();
 
+        System.out.println("You've lived " + age + " years. In another " + age + " years you'll be " + 2*age + " years old.");
+    }
+
+    public static void testInput() {
+        System.out.format("I have %.0f cats", 7.98);
     }
 
     public static void testArray() {
@@ -49,5 +63,30 @@ public class Main {
         for (int i : arr) {
             System.out.println(i);
         }
+    }
+
+    public static void nameAge() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("\nEnter your name: ");
+        while (!sc.hasNextLine()) {
+            System.out.println("Invalid input. Please enter a valid name.");
+            sc.next();
+        }
+        String name = sc.nextLine();
+        if (name.equals("andy")) {
+            System.out.printf("You are awesome, %s \uD83D\uDC4D%n", name);
+        } else {
+            System.out.printf("%s! What a wonderful name! \uD83D\uDE00%n", name);
+        }
+
+        System.out.print("\nEnter your age as a double: ");
+        while (!sc.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a valid double.");
+            sc.next();
+        }
+        double age = sc.nextDouble();
+
+        System.out.printf("\n%s! What a wonderful name! \uD83D\uDE00 You are %s years old.", name, age);
     }
 }

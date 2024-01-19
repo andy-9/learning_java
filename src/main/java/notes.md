@@ -74,4 +74,6 @@
 
 
 ## Methods
-* `nextline()` reads the entire line of input, `next()` will read only the first word. `nextInt()` reads the next token as an int. `nextDouble()` reads the next token as a double.
+* `nextLine()` reads the entire line of input, `next()` will read only the first word. `nextInt()` reads the next token as an int. `nextDouble()` reads the next token as a double, `nextBoolean` reads the next token as a boolean.
+* `print` does not append a newline character at the end of the string, `println` does. `printf` is used for formatting output.
+* `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
