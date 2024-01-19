@@ -14,8 +14,8 @@ public class Main {
         //testArray();
         //ageDoubled();
         //numberOfCharacters();
-        int amountPerPerson = splitBill(100, 5);
-        System.out.println("Amount per person: € " + amountPerPerson);
+        //int amountPerPerson = splitBill(100, 5);
+        //System.out.println("Amount per person: € " + amountPerPerson);
     }
 
     public static int splitBill(int billTotal, int numPeople) {
