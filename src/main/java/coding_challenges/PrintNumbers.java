@@ -10,7 +10,12 @@ public class PrintNumbers {
         //print1to40Quack();
         //checkPassword();
         //print1to10InOneRow();
-        guessNumber();
+        //guessNumber();
+
+        double[] arr = new double[] { 25.92, 1.14, -75.3, 833.11 };
+        for (double e : arr) {
+            System.out.println(e);
+        }
     }
 
     private static void print89to117() {

@@ -35,8 +35,11 @@
     anArray[2] = 300; // etc.
   
   int[] exArray = { 100, 200, 300 };
+  System.out.println(exArray[1]); // 200
+  
+  length is a property of arrays (exArray.length).
     ```
-* **ArrayList**: The ArrayList class extends AbstractList and implements the List interface. ArrayList supports dynamic arrays that can grow as needed.
+* **ArrayList**: The ArrayList class extends AbstractList and implements the List interface. ArrayList supports dynamic arrays that can grow as needed. Only values of a single type are possible.
     ```java
     ArrayList<String> al = new ArrayList<String>();
     al.add("A");
@@ -46,7 +49,8 @@
     al.add("E");
   
     ArrayList<String> myArrayList = new ArrayList<>(Arrays.asList("Apple", "Banana", "Orange"));
-
+  
+  size() is a method provided by collections in Java (myArrayList.size()).
     ```
 * **HashMap**: A HashMap however, store items in "key/value" pairs, and you can access them by an index of another type (e.g. a String). One object is used as a key (index) to another object (value). It can store different types: String keys and Integer values, or the same type, like: String keys and String values.
     ```java
@@ -156,3 +160,11 @@
   } while (i < 5);
   ```
   Condition is checked last --> will run at least once.
+* `for-each` loop:
+  ```java
+  double[] arr = new double[] { 25.92, 1.14, -75.3, 833.11 };
+  for (double  : arr) {
+    System.out.println(i);
+  }
+  ```
+  for-each loops are used to iterate over elements of an array/collection. They are faster than the for loop and enhance the readability of the code. There are two types of for-each loop in Java: one for Java arrays and one for Java collections. The syntax of the for-each loop is: `for (type variableName : arrayName/collectionName) { <doSomething> }`  
