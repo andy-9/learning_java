@@ -9,3 +9,5 @@ z
 Jsrc/main/java/java_for_absolute_beginners/sec3_hello_world/HelloWorld.java,a\2\a2033faf3c3e5f9ec3bedb880e94034cf6e80b08
 e
 5src/main/java/coding_challenges/IfElseStatements.java,7\c\7c46e4c03db9cdd7ecb0af530827aab973d50e60
+`
+0src/main/java/coding_challenges/GuessNumber.java,b\9\b95df22c36f505b640bf198d7425082d1e331d60
