@@ -19,7 +19,7 @@
 * **float**: `float e = 3.5f;` single-precision 32-bit IEEE 754 floating point. Use a float (instead of double) if you need to save memory in large arrays of floating point numbers. This data type should never be used for precise values, such as currency. For that, you will need to use the java.math.BigDecimal class instead. Numbers and Strings covers BigDecimal and other useful classes provided by the Java platform.
 * **double**: `double f = 3.5;` double-precision 64-bit IEEE 754 floating point. This data type is generally the default choice for decimal values. As mentioned above, this data type should never be used for precise values, such as currency.
 * **boolean**: `boolean g = true;` the boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.
-* **char**: `char h = 'A'`, `char newLineChar = '\n';`, `char unicodeChar = '\u03A9'` (Greek capital letter omega), `char unicodeLiteral = 65` (= 'A') The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive). Important: single quotes!
+* **char**: `char h = 'A'`, `char newLineChar = '\n'`; `char backspace = '\b'`, `char unicodeChar = '\u03A9'` (Greek capital letter omega), `char unicodeLiteral = 65` (= 'A') The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive). Important: single quotes!
 
 ### Non-primitive types
 * **String**: Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. For example:
@@ -105,11 +105,54 @@
     ```
 
 
-## Methods
+## Random methods
 * `nextLine()` reads the entire line of input, `next()` will read only the first word. `nextInt()` reads the next token as an int. `nextDouble()` reads the next token as a double, `nextBoolean` reads the next token as a boolean.
 * `print` does not append a newline character at the end of the string, `println` does. `printf` is used for formatting output.
 * `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
 * Comparing strings is done with `equals()`, not with `==` (`stringVariable.equals("yes")`). `==` compares the references, not the values. `equalsIgnoreCase()` ignores case differences. `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
+* Get random number: `ThreadLocalRandom.current().nextInt(<begin>, <end+1>);`
 
 ## Math
 * Absolut value: `Math.abs()`
+
+## Loops
+* `for` loop:
+  ```java
+  for (int i = 0; i < 10; i++) {
+    <doSomething>
+  }
+  ```
+* `while` loop:
+  ```java
+  while (<condition>) {
+    <doSomething>
+    <change condition>
+  }
+  ```
+  Condition is checked first.
+* `break`: stops loop
+  ```java
+  for (int i = 0; i < 10; i++) {
+    <doSomething>
+    if (i == 4) {
+      break;
+    }
+  }
+  ```
+* `continue`: continues loop but omits if-condition
+  ```java
+  for (int i = 0; i < 10; i++) {
+    <doSomething>
+    if (i == 4) {
+      continue;
+    }
+  }
+  ```
+* `do-while` loop:
+  ```java
+  int i = 0;
+  do {
+    i++;
+  } while (i < 5);
+  ```
+  Condition is checked last --> will run at least once.
