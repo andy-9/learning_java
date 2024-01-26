@@ -11,6 +11,8 @@ public class GuessNumber {
      */
 
     public static void main(String[] args) {
+        int count = 0;
+
         Scanner sc = new Scanner(System.in);
 
         int numPlayer = getNumPlayer(sc);
@@ -25,12 +27,18 @@ public class GuessNumber {
         if (numPlayer == randomNumber) {
             System.out.println("Correct! Aren’t you lucky.");
         } else {
+            count++;
+            if (count == 1) {
+                System.out.println("Try again!");
+                getNumPlayer(sc);
+            }
             System.out.println("Hard luck! Maybe next time.");
         }
     }
 
     private static int getNumPlayer(final Scanner sc) {
-        System.out.print("Guess a number between 1 and 5: ");
+        System.out.println("I'm thinking of a number between 1 to 5. Try to guess it! ");
+        System.out.print("Your guess: ");
         typeCheck(sc);
         return sc.nextInt();
     }
@@ -41,5 +49,4 @@ public class GuessNumber {
             sc.next();
         }
     }
-
 }
