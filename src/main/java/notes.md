@@ -12,6 +12,7 @@
 
 ## Data types
 ### Primitive types
+* Variables of primitive types contain their value directly.
 * **byte**: `byte a = 10;` 8-bit signed two's complement integer. It has a minimum value of -128 and a maximum value of 127 (inclusive). The byte data type can be useful for saving memory in large arrays, where the memory savings actually matters. They can also be used in place of int where their limits help to clarify your code; the fact that a variable's range is limited can serve as a form of documentation.
 * **short**: `short b = 2000;` 16-bit signed two's complement integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive). As with byte, the same guidelines apply: you can use a short to save memory in large arrays, in situations where the memory savings actually matters.
 * **int**: `int c = 42;` 32-bit signed two's complement integer. It has a minimum value of -2,147,483,648 and a maximum value of 2,147,483,647 (inclusive). For integral values, this data type is generally the default choice unless there is a reason (like the above) to choose something else. This data type will most likely be large enough for the numbers your program will use, but if you need a wider range of values, use long instead.
@@ -21,7 +22,8 @@
 * **boolean**: `boolean g = true;` the boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.
 * **char**: `char h = 'A'`, `char newLineChar = '\n'`; `char backspace = '\b'`, `char unicodeChar = '\u03A9'` (Greek capital letter omega), `char unicodeLiteral = 65` (= 'A') The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive). Important: single quotes!
 
-### Non-primitive types
+### Non-primitive/reference types
+* Variables of reference types contain references (and not the values directly).
 * **String**: Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. For example:
     ```java
     String str = "abc";
@@ -107,6 +109,20 @@
         System.out.println("Looking forward to the Weekend");
     }
     ```
+  
+
+## Variables
+* **Static Variables**  
+  Static variables are associated with the class itself rather than with any instance of the class. They are shared among all instances (objects) of the class. They are accessed using the class name, not through an object reference. They are initialized only once when the class is loaded into memory.
+* **Non-Static (Instance) Variables**  
+  Non-static variables belong to a specific instance (object) of the class. Each instance of the class has its own copy of the non-static variables. They are accessed using object references. They are initialized when an instance of the class is created using the `new` keyword.
+* Whether a variable should be static or non-static depends on the intended use and the design of your program. Global variables in Java are typically instance variables, and they are often not declared as static. They belong to an instance of the class and are used to maintain the state of individual objects.  
+However, if you have a variable that needs to be shared among all instances of a class or accessed without instantiating an object of the class, you might consider declaring it as static.
+
+
+## Methods
+* `public static void main(String [] args)`  
+  `void` = return type. Can also be e.g. `int`.
 
 
 ## Random methods
@@ -115,6 +131,7 @@
 * `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
 * Comparing strings is done with `equals()`, not with `==` (`stringVariable.equals("yes")`). `==` compares the references, not the values. `equalsIgnoreCase()` ignores case differences. `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
 * Get random number: `ThreadLocalRandom.current().nextInt(<begin>, <end+1>);`
+* `Arrays.toString(<array>)` prints the values of the array. Import `java.utils.Arrays;` at top of file!
 
 ## Math
 * Absolut value: `Math.abs()`
@@ -125,6 +142,16 @@
   for (int i = 0; i < 10; i++) {
     <doSomething>
   }
+  ```
+  can also be written as an enhanced for loop (foreach loop):
+  ```java
+  for (int i : intArray) {
+    <doSomething>;
+  }
+  ```
+  or:
+  ```java
+  java.util.Arrays.stream(intArray).forEach(System.out::println);
   ```
 * `while` loop:
   ```java
