@@ -17,3 +17,7 @@ d
 4src/main/java/coding_challenges/ArraysChallenge.java,c\5\c586aa926dc53d611bb83d68eaeb7c97ade26307
 ^
 .src/main/java/coding_challenges/TicTacToe.java,e\b\eb3d5105ac42703f4f4d4e5402424f95442415ab
+V
+&src/main/java/exercises/TicTacToe.java,2\6\266d537febb429d0371912bf1de593c2dc2c797d
+Y
+)src/main/java/exercises/PrimeNumbers.java,c\9\c9e5a475662f217463abd058f848a313ada146e7

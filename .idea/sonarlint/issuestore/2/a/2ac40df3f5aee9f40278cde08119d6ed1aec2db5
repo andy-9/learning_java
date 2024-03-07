@@ -1,0 +1,13 @@
+
+X	java:S125	"<This block of commented-out lines of code should be removed.(Çà§Ó8Ö¨µÔ1
+X	java:S1253"<This block of commented-out lines of code should be removed.(ùüÈÊ8è¨µÔ1
+S
+java:S1144"1Remove this unused private "print89to117" method.(½²Ë¢üÿÿÿÿ8ğ¨µÔ1
+Q
+java:S1144"4Remove this unused private "print1to40Quack" method.(”‡êù8ğ¨µÔ1
+O
+java:S1144%"2Remove this unused private "checkPassword" method.(ÈŒ¬¨8ğ¨µÔ1
+Y
+java:S11442"7Remove this unused private "print1to10InOneRow" method.(›š×‰ÿÿÿÿÿ8ò¨µÔ1
+M
+java:S1144@"0Remove this unused private "guessNumber" method.(ğ÷ˆ8ò¨µÔ1
