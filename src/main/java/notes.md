@@ -54,6 +54,11 @@
   
   size() is a method provided by collections in Java (myArrayList.size()).
     ```
+* **Multidimensional Arrays**: A multidimensional array is an array containing one or more arrays. To create a two-dimensional array, add each array within its own set of curly braces.
+    ```java
+    int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+    int x = myNumbers[1][2]; // 7
+    ```
 * **HashMap**: A HashMap however, store items in "key/value" pairs, and you can access them by an index of another type (e.g. a String). One object is used as a key (index) to another object (value). It can store different types: String keys and Integer values, or the same type, like: String keys and String values.
     ```java
     HashMap<String, String> capitalCities = new HashMap<String, String>();
@@ -127,14 +132,20 @@ However, if you have a variable that needs to be shared among all instances of a
 
 ## Random methods
 * `nextLine()` reads the entire line of input, `next()` will read only the first word. `nextInt()` reads the next token as an int. `nextDouble()` reads the next token as a double, `nextBoolean` reads the next token as a boolean.
-* `print` does not append a newline character at the end of the string, `println` does. `printf` is used for formatting output.
-* `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
-* Comparing strings is done with `equals()`, not with `==` (`stringVariable.equals("yes")`). `==` compares the references, not the values. `equalsIgnoreCase()` ignores case differences. `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
 * Get random number: `ThreadLocalRandom.current().nextInt(<begin>, <end+1>);`
 * `Arrays.toString(<array>)` prints the values of the array. Import `java.utils.Arrays;` at top of file!
 
+### Working with Strings
+* `print` does not append a newline character at the end of the string, `println` does. `printf` is used for formatting output.
+* `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
+* Comparing strings is done with `equals()`, not with `==` (`stringVariable.equals("yes")`). `==` compares the references, not the values. `equalsIgnoreCase()` ignores case differences. `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
+* `StringUtils.isEmpty` checks for null and empty String.
+* `StringUtils.isBlank` checks for null, empty String and whitespace in String.
+
+
 ## Math
 * Absolut value: `Math.abs()`
+
 
 ## Loops
 * `for` loop:
@@ -194,4 +205,22 @@ However, if you have a variable that needs to be shared among all instances of a
     System.out.println(i);
   }
   ```
-  for-each loops are used to iterate over elements of an array/collection. They are faster than the for loop and enhance the readability of the code. There are two types of for-each loop in Java: one for Java arrays and one for Java collections. The syntax of the for-each loop is: `for (type variableName : arrayName/collectionName) { <doSomething> }`  
+  
+  ```java
+    int[] numbers = {3, 7, 5, 2, 4};
+    int sum = 0;
+    for (int number : numbers) {
+      sum += number;
+    }
+    System.out.println("Sum = " + sum);
+  ```
+  for-each loops are used to iterate over elements of an array/collection. They are faster than the for loop and enhance the readability of the code. There are two types of for-each loop in Java: one for Java arrays and one for Java collections. The syntax of the for-each loop is: `for (type variableName : arrayName/collectionName) { <doSomething> }`
+* Loop over 2-dimensional array:
+  ```java
+  int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+  for (int i = 0; i < myNumbers.length; i++) {
+    for (int j = 0; j < myNumbers[i].length; j++) {
+      System.out.println(myNumbers[i][j]);
+    }
+  }
+  ```
