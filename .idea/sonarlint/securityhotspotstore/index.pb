@@ -27,3 +27,5 @@ f
 6src/main/java/coding_challenges/QuizFileQuestions.java,0\b\0b0520ba6424c3f156f3383cbae630ca87e0c9a0
 f
 6src/main/java/coding_challenges/QuizFiveQuestions.java,5\0\50fed074de85469504327f31e42ce497df0ff192
+f
+6src/main/java/coding_challenges/GuessRandomNumber.java,8\0\8023d1a2e3b5d4e0aee81758e5ff0d2ce3e183b7

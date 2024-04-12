@@ -1,3 +1,16 @@
+/**
+ * Write a quiz program with five true-or-false questions. Display a question to the user, and ask the user to enter
+ * either true or false, then move on to the next question. At the end of the quiz display the user’s score.
+ * Use three arrays, a String array for holding the questions, a boolean array for the answers, and another boolean
+ * array for the user’s answers.
+ *
+ * Hints:
+ * You can use the Scanner’s nextBoolean() method to get the user’s input
+ * Because the questions, answers, and user’s answers are stored in three separate arrays, you can use their indexes to
+ * associate them (e.g. index 1 in the answers array correlates to index 1 in the questions array)
+ */
+
+
 package coding_challenges;
 
 import java.util.Scanner;
