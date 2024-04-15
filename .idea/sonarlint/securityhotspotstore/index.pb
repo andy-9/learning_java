@@ -21,10 +21,6 @@ Y
 )src/main/java/exercises/PrimeNumbers.java,c\9\c9e5a475662f217463abd058f848a313ada146e7
 g
 7src/main/java/coding_challenges/StudentExamResults.java,3\5\3585c004e9b976de31404f58e948c1ea16eb27d4
-c
-3src/main/java/coding_challenges/Quiz5Questions.java,1\c\1c993e5e6f50c18c26a3e92f2c5bc01e121bf36a
-f
-6src/main/java/coding_challenges/QuizFileQuestions.java,0\b\0b0520ba6424c3f156f3383cbae630ca87e0c9a0
 f
 6src/main/java/coding_challenges/QuizFiveQuestions.java,5\0\50fed074de85469504327f31e42ce497df0ff192
 f
