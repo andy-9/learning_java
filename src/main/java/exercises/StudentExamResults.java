@@ -7,10 +7,8 @@ The program should output:
 - The mean (average) score and percentage of the exam
  */
 
-package coding_challenges;
+package exercises;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentExamResults {

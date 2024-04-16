@@ -9,7 +9,7 @@
  * int randomNumber = ThreadLocalRandom.current().nextInt(1, 101);
  */
 
-package coding_challenges;
+package exercises;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;

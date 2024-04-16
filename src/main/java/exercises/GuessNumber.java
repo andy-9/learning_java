@@ -1,4 +1,4 @@
-package coding_challenges;
+package exercises;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;

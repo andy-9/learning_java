@@ -1,5 +1,4 @@
-package coding_challenges;
-import java.util.Arrays;
+package exercises;
 import java.util.Scanner;
 
 public class ArraysChallenge {

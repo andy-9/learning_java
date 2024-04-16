@@ -11,7 +11,7 @@
  */
 
 
-package coding_challenges;
+package exercises;
 
 import java.util.Scanner;
 

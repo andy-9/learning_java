@@ -1,4 +1,4 @@
-package coding_challenges;
+package exercises;
 
 public class IfElseStatements {
     /**

@@ -25,3 +25,9 @@ f
 6src/main/java/coding_challenges/QuizFiveQuestions.java,5\0\50fed074de85469504327f31e42ce497df0ff192
 f
 6src/main/java/coding_challenges/GuessRandomNumber.java,8\0\8023d1a2e3b5d4e0aee81758e5ff0d2ce3e183b7
+_
+/src/main/java/exercises/StudentExamResults.java,d\3\d37abf97e950e09576b05a2f0294174b9c578341
+^
+.src/main/java/sec_11/guest_list/GuestList.java,2\1\219f6818887f45342cc8fb9929698920817f4b08
+z
+Jsrc/main/java/java_for_absolute_beginners/sec_11_guest_list/GuestList.java,d\d\dd5743eaa6c31d690cb1457d86bba463c55f3344
