@@ -205,7 +205,7 @@ However, if you have a variable that needs to be shared among all instances of a
     System.out.println(i);
   }
   ```
-  
+
   ```java
     int[] numbers = {3, 7, 5, 2, 4};
     int sum = 0;
