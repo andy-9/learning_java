@@ -15,21 +15,21 @@ public class GuestList {
         guests[4] = "Christopher";
 
         do {
+            // print guests
+            System.out.println("\n__________________________________\n- Guests -\n");
+            for (final String guest : guests) {
+                System.out.println(guest == null ? "--" : guest);
+            }
+
             System.out.println("\n__________________________________\n- Menu -\n");
-            System.out.println("1 - Display all Guests");
-            System.out.println("2 - Add Guests");
-            System.out.println("3 - Remove Guests");
-            System.out.println("4 - Exit");
+            System.out.println("1 - Add Guests");
+            System.out.println("2 - Remove Guests");
+            System.out.println("3 - Exit\n");
             System.out.print("Option: ");
             int option = scanner.nextInt();
             System.out.println();
 
             if (option == 1) {
-                System.out.println("\n__________________________________\n- Guests -\n");
-                for (final String guest : guests) {
-                    System.out.println(guest == null ? "--" : guest);
-                }
-            } else if (option == 2) {
                 for (int i = 0; i < guests.length; i++) {
                     if (guests[i] == null) {
                         System.out.print("Name: ");
@@ -37,7 +37,7 @@ public class GuestList {
                         break;
                     }
                 }
-            } else if (option == 3) {
+            } else if (option == 2) {
                 System.out.print("Name: ");
                 String name = scanner.next();
                 for (int i = 0; i < guests.length; i++) {
@@ -46,7 +46,7 @@ public class GuestList {
                         break;
                     }
                 }
-            } else if (option == 4)
+            } else if (option == 3)
                 break;
         } while (true);
 
