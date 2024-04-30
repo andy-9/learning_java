@@ -16,12 +16,13 @@ public class GuestList {
 
             final int option = getOption();
 
-            if (option == 1)
+            if (option == 1) {
                 addGuest();
-            else if (option == 2)
+            } else if (option == 2) {
                 removeGuest();
-            else if (option == 3)
+            } else if (option == 3) {
                 break;
+            }
         } while (true);
 
         System.out.println("Exiting...");
@@ -45,8 +46,9 @@ public class GuestList {
             }
         }
 
-        if (isEmpty)
+        if (isEmpty) {
             System.out.println("The guest list is empty.");
+        }
     }
 
     private static void displayMenu() {
@@ -75,13 +77,13 @@ public class GuestList {
     }
 
     private static void removeGuest() {
-        System.out.print("Name: ");
-        String name = scanner.next();
-        for (int i = 0; i < guests.length; i++) {
-            if (guests[i] != null && guests[i].equals(name)) {
-                guests[i] = null;
-                break;
-            }
+        System.out.print("Number: ");
+        int number = scanner.nextInt();
+
+        if (guests[number - 1] == null) {
+            System.out.println("ERROR: There is no guest with that number.");
+        } else {
+            guests[number - 1] = null;
         }
 
         String[] temp = new String[guests.length];

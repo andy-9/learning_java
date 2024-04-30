@@ -68,7 +68,7 @@
     capitalCities.put("USA", "Washington DC");
     ```
 
-### Type casting
+### Type casting/conversion
 * **implicit type casting**: byte -> short -> int -> long -> float -> double
 * **explicit type casting**: double -> float -> long -> int -> short -> byte
 * ```java
@@ -81,7 +81,15 @@
     int num2 = 3;
     double division = (double) num1 / num2; (3.3333333333333333)
   ```
-* **type casting with wrapper classes**: `Integer.parseInt("123")` converts a String to an int, `Integer.toString(123)` converts an int to a String
+* `Integer.parseInt("123")` converts a String to an int.
+* `Integer.toString(123)` converts an int to a String.  
+  `String.valueOf(123)` converts an int to a String.  
+
+
+### Get type
+* ```java
+  obj.getClass().getName()
+   ```
 
 
 ## Conditions
