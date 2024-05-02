@@ -61,6 +61,7 @@ public class GuestList {
     private static int getOption() {
         System.out.print("Option: ");
         int option = scanner.nextInt();
+        scanner.nextLine();
         System.out.println();
         return option;
     }
@@ -69,7 +70,7 @@ public class GuestList {
         for (int i = 0; i < guests.length; i++) {
             if (guests[i] == null) {
                 System.out.print("Name: ");
-                guests[i] = scanner.next();
+                guests[i] = scanner.nextLine();
                 break;
             }
         }
@@ -80,21 +81,21 @@ public class GuestList {
         System.out.print("Number: ");
         int number = scanner.nextInt();
 
-        if (guests[number - 1] == null) {
-            System.out.println("ERROR: There is no guest with that number.");
+        if (number < 1 || number > 10 || guests[number - 1] == null) {
+            System.out.println("\nERROR: There is no guest with that number.");
         } else {
             guests[number - 1] = null;
-        }
 
-        String[] temp = new String[guests.length];
-        int ti = 0;
-        for (final String guest : guests) {
-            if (guest != null) {
-                temp[ti] = guest;
-                ti++;
+            String[] temp = new String[guests.length];
+            int ti = 0;
+            for (final String guest : guests) {
+                if (guest != null) {
+                    temp[ti] = guest;
+                    ti++;
+                }
             }
+            guests = temp;
         }
-        guests = temp;
     }
 
 }
