@@ -1,5 +1,6 @@
 package java_for_absolute_beginners.sec_11_guest_list;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuestList {
@@ -23,6 +24,8 @@ public class GuestList {
             } else if (option == 3) {
                 renameGuest();
             } else if (option == 4) {
+                insertGuest();
+            } else if (option == 5) {
                 break;
             }
         } while (true);
@@ -58,7 +61,8 @@ public class GuestList {
         System.out.println("1 - Add Guests");
         System.out.println("2 - Remove Guests");
         System.out.println("3 - Rename Guest");
-        System.out.println("4 - Exit\n");
+        System.out.println("4 - Insert Guest at number ...");
+        System.out.println("5 - Exit\n");
     }
 
     private static int getOption() {
@@ -109,9 +113,25 @@ public class GuestList {
         if (number < 1 || number > 10 || guests[number - 1] == null) {
             System.out.println("\nERROR: There is no guest with that number.");
         } else {
-            System.out.print("\nWhat is the new name?" );
+            System.out.print("\nWhat is the new name?");
             String newName = scanner.nextLine();
             guests[number - 1] = newName;
+        }
+    }
+
+    private static void insertGuest() {
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Position: ");
+        int position = scanner.nextInt();
+
+        if (position < 1 || position > 10) {
+            System.out.println("\nERROR: Position must be between 1 and 10.");
+        } else {
+            for (int i = guests.length - 1; i > position - 1; i--) {
+                guests[i] = guests[i - 1];
+            }
+            guests[position - 1 ] = name;
         }
     }
 
