@@ -21,6 +21,8 @@ public class GuestList {
             } else if (option == 2) {
                 removeGuest();
             } else if (option == 3) {
+                renameGuest();
+            } else if (option == 4) {
                 break;
             }
         } while (true);
@@ -29,11 +31,11 @@ public class GuestList {
     }
 
     private static void insertTestNames() {
-        guests[0] = "Jacob";
-        guests[1] = "Lisa";
-        guests[2] = "Hartmut";
-        guests[3] = "Ayse";
-        guests[4] = "Udi";
+        guests[0] = "Jacob Magiera";
+        guests[1] = "Lisa Mahlich";
+        guests[2] = "Hartmut Rosa";
+        guests[3] = "Ayse Tunc";
+        guests[4] = "Udi Nir";
     }
 
     private static void displayGuests() {
@@ -55,7 +57,8 @@ public class GuestList {
         System.out.println("\n__________________________________\n- Menu -\n");
         System.out.println("1 - Add Guests");
         System.out.println("2 - Remove Guests");
-        System.out.println("3 - Exit\n");
+        System.out.println("3 - Rename Guest");
+        System.out.println("4 - Exit\n");
     }
 
     private static int getOption() {
@@ -95,6 +98,20 @@ public class GuestList {
                 }
             }
             guests = temp;
+        }
+    }
+
+    private static void renameGuest() {
+        System.out.print("Whom would you like to rename? Number: ");
+        int number = scanner.nextInt();
+        scanner.nextLine();
+
+        if (number < 1 || number > 10 || guests[number - 1] == null) {
+            System.out.println("\nERROR: There is no guest with that number.");
+        } else {
+            System.out.print("\nWhat is the new name?" );
+            String newName = scanner.nextLine();
+            guests[number - 1] = newName;
         }
     }
 
