@@ -5,7 +5,20 @@ import java.util.Scanner;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+
     public static void main(String[] args) {
+        Employee emp = new Employee();
+        Employee emp2 = new Employee();
+
+        emp.name = "Jeff";
+        emp.age = 32;
+        emp.jobTitle = "Construction Worker";
+
+        emp2.name = "Sarah";
+        emp2.age = 50;
+        emp2.jobTitle = "Project Manager";
+
+
         Thing thing = new Thing();
         thing.num = 5;
         thing.word = "hello";
@@ -14,8 +27,11 @@ public class Main {
         System.out.println(fooResult);
 
         Thing thing2 = new Thing();
-        thing.num = 21;
-        thing.word = "world";
+        thing2.num = 21;
+        thing2.word = "world";
+
+        bar(emp2);
+        thingBar(thing2);
 
         //testInput();
         //testArray();
@@ -23,6 +39,15 @@ public class Main {
         //numberOfCharacters();
         //int amountPerPerson = splitBill(100, 5);
         //System.out.println("Amount per person: € " + amountPerPerson);
+    }
+
+    static void bar(Employee e) {
+        System.out.println(e.age);
+        //System.out.println(t.word + " is " + t.num + " years old.");
+    }
+
+    static void thingBar(Thing t) {
+        System.out.println(t.word + " is " + t.num + " years old.");
     }
 
     public static int splitBill(int billTotal, int numPeople) {

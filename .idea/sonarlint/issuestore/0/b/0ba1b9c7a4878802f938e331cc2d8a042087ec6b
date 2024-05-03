@@ -1,7 +1,3 @@
 
-‚
-java:S1854":Remove this useless assignment to local variable "thing2".(æÈ¸şÿÿÿÿ8´£àøó1J$82e0957d-02fe-4cc7-9278-ad193387bd75
-s
-java:S1481"+Remove this unused "thing2" local variable.(æÈ¸şÿÿÿÿ8·£àøó1J$a9d0cdad-62e6-438e-961b-f0d05e7c5230
 ”
-java:S3457a"Q%n should be used in place of \n to produce the platform-specific line separator.(ÖÚ·ˆ8Ä£àøó1J$5617f5c6-777f-4532-9eae-e2985fd2edc5
+java:S3457z"Q%n should be used in place of \n to produce the platform-specific line separator.(ÖÚ·ˆ8Æ·ºúó1J$9b9be2bb-5df2-40de-b194-a18acc8a1a7c

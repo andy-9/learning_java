@@ -19,3 +19,5 @@ Jsrc/main/java/java_for_absolute_beginners/sec_11_guest_list/GuestList.java,d\d
 src/Thing.java,0\7\07ea29a59b10d1201c42a7a7c80212377d65bf5a
 T
 $src/main/java/org/example/Thing.java,c\c\cc20a546e6fb6f4558e71ec7f40e4f30aadeec2b
+W
+'src/main/java/org/example/Employee.java,9\f\9f049490270833ba92b2330d4db1a284e3e81dfa
