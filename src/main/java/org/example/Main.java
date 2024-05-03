@@ -6,9 +6,16 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Eingabe with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        //System.out.print("Hello and welcome!\n");
+        Thing thing = new Thing();
+        thing.num = 5;
+        thing.word = "hello";
+
+        int fooResult = thing.foo();
+        System.out.println(fooResult);
+
+        Thing thing2 = new Thing();
+        thing.num = 21;
+        thing.word = "world";
 
         //testInput();
         //testArray();

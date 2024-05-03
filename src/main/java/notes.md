@@ -141,12 +141,18 @@ However, if you have a variable that needs to be shared among all instances of a
 ## Random methods
 * `nextLine()` reads the entire line of input, `next()` will read only the first word. `nextInt()` reads the next token as an int. `nextDouble()` reads the next token as a double, `nextBoolean` reads the next token as a boolean.
 * Get random number: `ThreadLocalRandom.current().nextInt(<begin>, <end+1>);`
+
+### Print
 * `Arrays.toString(<array>)` prints the values of the array. Import `java.utils.Arrays;` at top of file!
+* `print` does not append a newline character at the end of the string, `println` does. `printf` is used for formatting output.
+
+### Format
+* `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
+
+### Comparing
+* Comparing strings is done with `equals()`, not with `==` (`stringVariable.equals("yes")`). `==` compares the references, not the values. `equalsIgnoreCase()` ignores case differences. `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
 
 ### Working with Strings
-* `print` does not append a newline character at the end of the string, `println` does. `printf` is used for formatting output.
-* `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
-* Comparing strings is done with `equals()`, not with `==` (`stringVariable.equals("yes")`). `==` compares the references, not the values. `equalsIgnoreCase()` ignores case differences. `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
 * `StringUtils.isEmpty` checks for null and empty String.
 * `StringUtils.isBlank` checks for null, empty String and whitespace in String.
 
@@ -232,3 +238,9 @@ However, if you have a variable that needs to be shared among all instances of a
     }
   }
   ```
+  
+## OOP
+* Objects are created from classes.
+* A class serves as a blueprint for creating objects.
+* Classes are written in Pascale case.
+* You can instantiate variables in a class. You can define methods.
