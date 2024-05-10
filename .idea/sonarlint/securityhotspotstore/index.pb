@@ -15,8 +15,6 @@ _
 /src/main/java/exercises/StudentExamResults.java,d\3\d37abf97e950e09576b05a2f0294174b9c578341
 z
 Jsrc/main/java/java_for_absolute_beginners/sec_11_guest_list/GuestList.java,d\d\dd5743eaa6c31d690cb1457d86bba463c55f3344
->
-src/Thing.java,0\7\07ea29a59b10d1201c42a7a7c80212377d65bf5a
 T
 $src/main/java/org/example/Thing.java,c\c\cc20a546e6fb6f4558e71ec7f40e4f30aadeec2b
 W
