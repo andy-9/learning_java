@@ -7,31 +7,36 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Employee emp = new Employee();
-        Employee emp2 = new Employee();
+        Rectangle r1 = new Rectangle();
+        r1.setHeight(5);
+        r1.setWidth(9);
+        r1.printArea();
 
-        emp.name = "Jeff";
-        emp.age = 32;
-        emp.jobTitle = "Construction Worker";
-
-        emp2.name = "Sarah";
-        emp2.age = 50;
-        emp2.jobTitle = "Project Manager";
-
-
-        Thing thing = new Thing();
-        thing.num = 5;
-        thing.word = "hello";
-
-        int fooResult = thing.foo();
-        System.out.println(fooResult);
-
-        Thing thing2 = new Thing();
-        thing2.num = 21;
-        thing2.word = "world";
-
-        bar(emp2);
-        thingBar(thing2);
+//        Employee emp = new Employee();
+//        Employee emp2 = new Employee();
+//
+//        emp.name = "Jeff";
+//        emp.age = 32;
+//        emp.jobTitle = "Construction Worker";
+//
+//        emp2.name = "Sarah";
+//        emp2.age = 50;
+//        emp2.jobTitle = "Project Manager";
+//
+//
+//        Thing thing = new Thing();
+//        thing.num = 5;
+//        thing.word = "hello";
+//
+//        int fooResult = thing.foo();
+//        System.out.println(fooResult);
+//
+//        Thing thing2 = new Thing();
+//        thing2.num = 21;
+//        thing2.word = "world";
+//
+//        bar(emp2);
+//        thingBar(thing2);
 
         //testInput();
         //testArray();

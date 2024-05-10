@@ -19,7 +19,7 @@
 * **long**: `long d = 123456789123L;` 64-bit signed two's complement integer. It has a minimum value of -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807 (inclusive). Use this data type when you need a range of values wider than those provided by int.
 * **float**: `float e = 3.5f;` single-precision 32-bit IEEE 754 floating point. Use a float (instead of double) if you need to save memory in large arrays of floating point numbers. This data type should never be used for precise values, such as currency. For that, you will need to use the java.math.BigDecimal class instead. Numbers and Strings covers BigDecimal and other useful classes provided by the Java platform.
 * **double**: `double f = 3.5;` double-precision 64-bit IEEE 754 floating point. This data type is generally the default choice for decimal values. As mentioned above, this data type should never be used for precise values, such as currency.
-* **boolean**: `boolean g = true;` the boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.
+* **boolean**: `boolean g = true;` the boolean data type has only two possible values: true and false. It starts with false as default! Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.
 * **char**: `char h = 'A'`, `char newLineChar = '\n'`; `char backspace = '\b'`, `char unicodeChar = '\u03A9'` (Greek capital letter omega), `char unicodeLiteral = 65` (= 'A') The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive). Important: single quotes!
 
 ### Non-primitive/reference types
@@ -240,7 +240,60 @@ However, if you have a variable that needs to be shared among all instances of a
   ```
   
 ## OOP
-* Objects are created from classes.
+* Objects have state and behavior.  
+  State means data / the possibility to collect attributes.
+* Objects are created from classes. It's possible to create as many objects as needed.
 * A class serves as a blueprint for creating objects.
-* Classes are written in Pascale case.
-* You can instantiate variables in a class. You can define methods.
+* Classes are written in Pascal case.
+* You can instantiate variables and define methods in a class.  
+  --> instance variables / fields  
+  ```java
+  public class Main {
+    public static void main(String[] args) {
+        Door dd = new Door();
+        dd.name = "Driver";
+        dd.open();
+        dd.printStatus();
+
+        Door pd = new Door();
+        pd.name = "Passenger";
+        pd.printStatus();
+    }
+  
+  }
+  
+  public class Door {
+    String name;
+    boolean isOpen;
+
+    void open() {
+        isOpen = true;
+    }
+
+    void close() {
+        isOpen = false;
+    }
+
+    void printStatus() {
+        if (isOpen) {
+            System.out.println(name + " door is open.");
+        } else {
+            System.out.println(name + " door is closed.");
+        }
+    }
+  }
+  ```
+  
+### Encapsulation
+* Idea: Encapsulate code inside classes.
+* Encapsulate the functionality for every device in their own class.
+* Possible to restrict access to certain parts --> then these parts are more encapsulated than the rest. 
+  --> make e.g. variables private: `private int height`  
+  --> can't be accessed by another class
+* Setter or mutator methods call (from another class) a method inside a class and pass it a value.
+Then this method makes the necessary changes to the fields. Method name begins with `set`.
+Almost always interact with an object through its methods, not its variables! Mark all variables as private!
+* Methods _can_ be private as well.
+* If it is not supposed to be `private`, it can be set to `public`.
+* If something isn't specified, it has default accessibility known as `package private`
+  --> accessible from anywhere in the same package.

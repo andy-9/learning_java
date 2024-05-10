@@ -19,3 +19,9 @@ T
 $src/main/java/org/example/Thing.java,c\c\cc20a546e6fb6f4558e71ec7f40e4f30aadeec2b
 W
 'src/main/java/org/example/Employee.java,9\f\9f049490270833ba92b2330d4db1a284e3e81dfa
+R
+"src/main/java/org/example/Car.java,4\c\4c4147bab083793c016648b620b522cb001e5b5b
+S
+#src/main/java/org/example/Door.java,6\4\64cea3152bc427ab3d3f03e427e0184fa007fb1c
+X
+(src/main/java/org/example/Rectangle.java,4\e\4e88dc259387934623bfe4daa53c629298db4cb9
