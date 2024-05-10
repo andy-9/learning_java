@@ -7,10 +7,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle();
-        r1.setHeight(5);
-        r1.setWidth(9);
-        r1.printArea();
+        Rectangle r1 = new Rectangle(5, 9);
+
+        System.out.println("r1 height: " + r1.getHeight());
+        System.out.println("r1 width: " + r1.getWidth());
+        System.out.println("r1 area: " + r1.getArea());
+        System.out.println("r1 area: " + r1.getPerimeter());
 
 //        Employee emp = new Employee();
 //        Employee emp2 = new Employee();

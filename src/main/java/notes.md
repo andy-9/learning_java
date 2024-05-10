@@ -134,9 +134,11 @@ However, if you have a variable that needs to be shared among all instances of a
 
 
 ## Methods
-* `public static void main(String [] args)`  
-  `void` = return type. Can also be e.g. `int`.
-
+* `public static void main(String [] args)`
+  `public` = accessibility  
+  `static` = 
+  `void` = return type. Can also be e.g. `int`.  
+  `main` = name of function
 
 ## Random methods
 * `nextLine()` reads the entire line of input, `next()` will read only the first word. `nextInt()` reads the next token as an int. `nextDouble()` reads the next token as a double, `nextBoolean` reads the next token as a boolean.
@@ -287,13 +289,42 @@ However, if you have a variable that needs to be shared among all instances of a
 ### Encapsulation
 * Idea: Encapsulate code inside classes.
 * Encapsulate the functionality for every device in their own class.
-* Possible to restrict access to certain parts --> then these parts are more encapsulated than the rest. 
+* Possible to restrict access to certain parts  
+  --> then these parts are more encapsulated than the rest.  
   --> make e.g. variables private: `private int height`  
-  --> can't be accessed by another class
+  --> can't be accessed by another class  
+  --> object is in control of its own fields
 * Setter or mutator methods call (from another class) a method inside a class and pass it a value.
-Then this method makes the necessary changes to the fields. Method name begins with `set`.
-Almost always interact with an object through its methods, not its variables! Mark all variables as private!
+Then this method makes the necessary changes to the fields. Method name begins with `set`.  
+  ```java
+  public void setHeight(int h) {
+    if (h > 0)
+      height = h;
+  }
+  ```
+* Getter or accessor methods. Method name begins with `get`.  
+  ```java
+  public int getHeight() {
+    return height;
+  }
+  ```
+* The best way to interact with an object is through its methods, not its variables! Mark all variables as private!
 * Methods _can_ be private as well.
 * If it is not supposed to be `private`, it can be set to `public`.
-* If something isn't specified, it has default accessibility known as `package private`
+* If something isn't specified, it has default accessibility known as `package private`  
   --> accessible from anywhere in the same package.
+
+### Constructors
+* A constructor is a method that runs when you create a new object.
+* Constructors are used to initialize objects.
+* They are not methods, but look and work almost exactly like them.
+* 2 defining features:  
+  - Constructors must have the same name as the class.
+  - Do not have a return type
+* Constructors run automatically when an object is created.
+```java
+    public Rectangle(int h, int w) {
+      setHeight(h);
+      setWidth(w);
+    }
+```
