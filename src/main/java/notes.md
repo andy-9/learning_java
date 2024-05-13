@@ -41,7 +41,7 @@
   
   length is a property of arrays (exArray.length).
     ```
-* **ArrayList**: The ArrayList class extends AbstractList and implements the List interface. ArrayList supports dynamic arrays that can grow as needed. Only values of a single type are possible.
+* **ArrayList**: The ArrayList class extends AbstractList and implements the List interface. ArrayList supports dynamic arrays that can grow as needed. Only values of a single type are possible. Always prefer ArrayLists over Arrays.
     ```java
     ArrayList<String> al = new ArrayList<String>();
     al.add("A");
@@ -52,8 +52,15 @@
   
     ArrayList<String> myArrayList = new ArrayList<>(Arrays.asList("Apple", "Banana", "Orange"));
   
-  size() is a method provided by collections in Java (myArrayList.size()).
     ```
+  
+  Length of array: `al.size();`    
+  Remove an item with `al.remove(index)` or `al.remove(item)`.  
+  Get index: `al.indexOf(item);`  
+  Contains: `al.contains(item);`  
+  Get: `al.get(index);`  
+  Overwrite: `al.set(index, item);`  
+  Remove everything in list: `al.clear();`
 * **Multidimensional Arrays**: A multidimensional array is an array containing one or more arrays. To create a two-dimensional array, add each array within its own set of curly braces.
     ```java
     int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };

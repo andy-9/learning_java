@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -7,12 +9,20 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(5, 9);
 
-        System.out.println("r1 height: " + r1.getHeight());
-        System.out.println("r1 width: " + r1.getWidth());
-        System.out.println("r1 area: " + r1.getArea());
-        System.out.println("r1 area: " + r1.getPerimeter());
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+        System.out.println(list.contains(2)); // true
+        System.out.println(list.indexOf(1)); // 0
+        System.out.println(list.getFirst()); // 1
+        System.out.println(list.getLast()); // 3
+        System.out.println(list.get(1)); // 2
+
+
+//        Rectangle r1 = new Rectangle(5, 9);
+//        System.out.println("r1 height: " + r1.getHeight());
+//        System.out.println("r1 width: " + r1.getWidth());
+//        System.out.println("r1 area: " + r1.getArea());
+//        System.out.println("r1 area: " + r1.getPerimeter());
 
 //        Employee emp = new Employee();
 //        Employee emp2 = new Employee();
