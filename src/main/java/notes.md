@@ -159,7 +159,10 @@ However, if you have a variable that needs to be shared among all instances of a
 * `format` is used for formatting output: `System.out.format("I have %d cats", 7);`. `%d` is a placeholder for a decimal number. `%s` is a placeholder for a string. `%f` is a placeholder for a floating-point number. `%n` is a platform-independent newline character. `%.2f` is a placeholder for a floating-point number with 2 decimal places. `%.0f`rounds it to an int.
 
 ### Comparing
-* Comparing strings is done with `equals()`, not with `==` (`stringVariable.equals("yes")`). `==` compares the references, not the values. `equalsIgnoreCase()` ignores case differences. `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
+* Comparing strings is done with `equals()`, not with `==` (`"yes".equals(stringVariable).  
+* `==` compares the references, not the values.
+* `equalsIgnoreCase()` ignores case differences.
+* `compareTo()` compares two strings lexicographically; the comparison is based on the Unicode value of each character in the strings.
 
 ### Working with Strings
 * `StringUtils.isEmpty` checks for null and empty String.
@@ -327,7 +330,7 @@ Then this method makes the necessary changes to the fields. Method name begins w
 * They are not methods, but look and work almost exactly like them.
 * 2 defining features:  
   - Constructors must have the same name as the class.
-  - Do not have a return type
+  - Constructors do not have a return type
 * Constructors run automatically when an object is created.
 ```java
     public Rectangle(int h, int w) {
@@ -335,3 +338,65 @@ Then this method makes the necessary changes to the fields. Method name begins w
       setWidth(w);
     }
 ```
+
+### Composition
+* 'has a'-relationship (car has wheels)
+* `this` refers to the object itself  
+  ```java
+  public class Student {
+    private String name;
+    private String dateOfBirth;
+    private boolean hasStudentHousing;
+  
+    public void setName(String name) {
+      this.name = name;
+    }
+  }
+  ```  
+  `this.name` refers to `name` in the class (line 2).
+* Getters and Setters. Can be generated with one right-click ("Generate").
+* One class can get and set another one:
+  ```java
+  public class Student {
+    private Payroll payroll; 
+    
+    public void setPayroll(Payroll payroll) {
+        this.payroll = payroll;
+    }
+
+    public Payroll getPayroll() {
+        return payroll;
+    }
+  }
+  ```
+  ```java
+  public class Payroll {
+    private String hierarchyLevel;
+    private int income;
+
+    public int getYearsInCompany() {
+        return yearsInCompany;
+    }
+
+    public void setYearsInCompany(final int yearsInCompany) {
+        this.yearsInCompany = yearsInCompany;
+    }
+    ...
+  ```
+  ```java
+  public class Main {
+
+    public static void main(String[] args) {
+      Employee emp = new Employee();
+      emp.setName("Jeff");
+      emp.setAge(32);
+      emp.setJob(true);
+
+      emp.setPayroll(new Payroll());
+      Payroll p = emp.getPayroll();
+      p.setHierarchyLevel("Senior");
+      p.setIncome(40000);
+      p.setYearsInCompany(3);
+    }
+  }
+  ```

@@ -25,3 +25,8 @@ S
 #src/main/java/org/example/Door.java,6\4\64cea3152bc427ab3d3f03e427e0184fa007fb1c
 X
 (src/main/java/org/example/Rectangle.java,4\e\4e88dc259387934623bfe4daa53c629298db4cb9
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+V
+&src/main/java/org/example/Payroll.java,2\4\2451c616f6fed7fddea260d1433ead176d34669a

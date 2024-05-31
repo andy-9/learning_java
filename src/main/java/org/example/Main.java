@@ -9,32 +9,42 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Employee emp = new Employee();
+//
+        emp.setName("Jeff");
+        emp.setAge(32);
+        emp.setJob(true);
 
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
-        System.out.println(list.contains(2)); // true
-        System.out.println(list.indexOf(1)); // 0
-        System.out.println(list.getFirst()); // 1
-        System.out.println(list.getLast()); // 3
-        System.out.println(list.get(1)); // 2
+        emp.setPayroll(new Payroll());
+        Payroll p = emp.getPayroll();
+        p.setHierarchyLevel("Senior");
+        p.setIncome(40000);
+        p.setYearsInCompany(3);
 
+        if (emp.hasJob()) {
+            System.out.println(emp.getName() + " is " + emp.getAge() + " old, is with " + p.getYearsInCompany() +
+                    " years a " + p.getHierarchyLevel() + " in their company and earns " + p.getIncome() + " €/year.");
+        } else {
+            System.out.println(emp.hasJob() + " is currently unemployed.");
+        }
+
+//        Employee emp2 = new Employee();
+//        emp2.name = "Sarah";
+//        emp2.age = 50;
+//        emp2.jobTitle = "Project Manager";
+
+        //ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+        //System.out.println(list.contains(2)); // true
+        //System.out.println(list.indexOf(1)); // 0
+        //System.out.println(list.getFirst()); // 1
+        //System.out.println(list.getLast()); // 3
+        //System.out.println(list.get(1)); // 2
 
 //        Rectangle r1 = new Rectangle(5, 9);
 //        System.out.println("r1 height: " + r1.getHeight());
 //        System.out.println("r1 width: " + r1.getWidth());
 //        System.out.println("r1 area: " + r1.getArea());
 //        System.out.println("r1 area: " + r1.getPerimeter());
-
-//        Employee emp = new Employee();
-//        Employee emp2 = new Employee();
-//
-//        emp.name = "Jeff";
-//        emp.age = 32;
-//        emp.jobTitle = "Construction Worker";
-//
-//        emp2.name = "Sarah";
-//        emp2.age = 50;
-//        emp2.jobTitle = "Project Manager";
-//
 //
 //        Thing thing = new Thing();
 //        thing.num = 5;
