@@ -74,6 +74,7 @@
     capitalCities.put("Norway", "Oslo");
     capitalCities.put("USA", "Washington DC");
     ```
+* **Enum**: define fixed set of values. Separated by commas and written in capital letters by convention because they are constants. Benefit: restricts the values to only those values that have been defined.
 
 ### Type casting/conversion
 * **implicit type casting**: byte -> short -> int -> long -> float -> double
@@ -338,15 +339,27 @@ Then this method makes the necessary changes to the fields. Method name begins w
       setWidth(w);
     }
 ```
+* Can be created automatically with right-click on "Generate".  
+  ```java
+  public class Book {
+    private String isbn;
+    private String title;
+
+    public Book(final String isbn, final String title) {
+        this.isbn = isbn;
+        this.title = title;
+    }
+}
+  ```
 
 ### Composition
 * 'has a'-relationship (car has wheels)
 * `this` refers to the object itself  
   ```java
-  public class Student {
+  public class Employee {
     private String name;
     private String dateOfBirth;
-    private boolean hasStudentHousing;
+    private boolean hasHousing;
   
     public void setName(String name) {
       this.name = name;

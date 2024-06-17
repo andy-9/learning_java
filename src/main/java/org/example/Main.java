@@ -9,24 +9,29 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Employee emp = new Employee();
+        whichSeason(Month.APRIL);
+        whichSeason(Month.DECEMBER);
+        whichSeason(Month.JULY);
+        whichSeason(Month.SEPTEMBER);
+
+        //        Employee emp = new Employee();
+////
+//        emp.setName("Jeff");
+//        emp.setAge(32);
+//        emp.setJob(true);
 //
-        emp.setName("Jeff");
-        emp.setAge(32);
-        emp.setJob(true);
-
-        emp.setPayroll(new Payroll());
-        Payroll p = emp.getPayroll();
-        p.setHierarchyLevel("Senior");
-        p.setIncome(40000);
-        p.setYearsInCompany(3);
-
-        if (emp.hasJob()) {
-            System.out.println(emp.getName() + " is " + emp.getAge() + " old, is with " + p.getYearsInCompany() +
-                    " years a " + p.getHierarchyLevel() + " in their company and earns " + p.getIncome() + " €/year.");
-        } else {
-            System.out.println(emp.hasJob() + " is currently unemployed.");
-        }
+//        emp.setPayroll(new Payroll());
+//        Payroll p = emp.getPayroll();
+//        p.setHierarchyLevel("Senior");
+//        p.setIncome(40000);
+//        p.setYearsInCompany(3);
+//
+//        if (emp.hasJob()) {
+//            System.out.println(emp.getName() + " is " + emp.getAge() + " old, is with " + p.getYearsInCompany() +
+//                    " years a " + p.getHierarchyLevel() + " in their company and earns " + p.getIncome() + " €/year.");
+//        } else {
+//            System.out.println(emp.hasJob() + " is currently unemployed.");
+//        }
 
 //        Employee emp2 = new Employee();
 //        emp2.name = "Sarah";
@@ -147,5 +152,22 @@ public class Main {
         double age = sc.nextDouble();
 
         System.out.printf("\n%s! What a wonderful name! \uD83D\uDE00 You are %s years old.", name, age);
+    }
+
+    public static void whichSeason(Month month) {
+        switch (month) {
+        case JANUARY, FEBRUARY, DECEMBER:
+            System.out.printf("%s is in the winter season.\n", month);
+            break;
+        case MARCH, APRIL, MAY:
+            System.out.printf("%s is in the spring season.\n", month);
+            break;
+        case JUNE, JULY, AUGUST:
+            System.out.printf("%s is in the summer season.\n", month);
+            break;
+        case SEPTEMBER, OCTOBER, NOVEMBER:
+            System.out.printf("%s is in the autumn season.\n", month);
+            break;
+        }
     }
 }
