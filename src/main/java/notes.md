@@ -414,7 +414,7 @@ Then this method makes the necessary changes to the fields. Method name begins w
   }
   ```
   
-### Polymorphism
+### Inheritance
 * Inheritance: If a class inherits all the variables and methods from another class.
   ```java Class A
   package p2;
@@ -461,4 +461,13 @@ Then this method makes the necessary changes to the fields. Method name begins w
  `private` is the most restrictive access level. `private` members can only be accessed through their own class.  
  `protected` members are inherited and accessible by the subclass, but not by Main() or any other outside classes.  
  If there is no modifier at all, you have `package-private` access: only classes within the same package can access or inherit.
-
+* When extending a class, you have to call the constructor of that class. You have to do this with `super()`:
+  ```java
+  public class CheckingAccount extends Account {
+    public CheckingAccount(double balance, double interestRate) {
+        super(balance, interestRate);
+    }
+  }
+  ```
+  But: this can be avoided, if in the superclass there is a constructor with no arguments: `    public Account() {}`. This means that we have two constructors in the parent class. If there is no constructor at all in the parent class, a constructor with no arguments is created by default.
+* **Method overriding**: A subclass overrides a method from its superclass (= different implementation for an inherited method). For a method to override another one it must have the same name, same parameters and same return type as the superclass method. You can call the method with `super.<methodName>(<args>)`.
