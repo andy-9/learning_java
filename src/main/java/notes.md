@@ -413,3 +413,52 @@ Then this method makes the necessary changes to the fields. Method name begins w
     }
   }
   ```
+  
+### Polymorphism
+* Inheritance: If a class inherits all the variables and methods from another class.
+  ```java Class A
+  package p2;
+  
+  public class A {
+    public int v1 = 5;
+    protected int v2 = 10;
+    int v3 = 15;
+    private int v4 = 20;
+  }
+  ```
+  ```java  Class B
+  package p3;
+  
+  import p2.A;
+  
+  public class B extends A {
+    public int v5 = 100;
+    public int v6 = 101;
+  
+    public void someMethod() {
+      v1 = 50;
+      v2 = 40;
+      v3 = 70;
+    }
+  }
+  ```
+  ```java Class Main
+  package p1;
+  
+  import p3.B;
+  
+  public class Main {
+    public static void main(String[] args) {
+      B b = new B();
+      b.v1 = 55;
+      b.v2 = 65;
+      b.v3 = 75;
+    }
+  }
+  ```
+* The inheriting class is the `subclass` (B), the child; the class inherited from the `superclass` (A), the parent.
+* Inheritance only works with `public`, not with `private`.  
+ `private` is the most restrictive access level. `private` members can only be accessed through their own class.  
+ `protected` members are inherited and accessible by the subclass, but not by Main() or any other outside classes.  
+ If there is no modifier at all, you have `package-private` access: only classes within the same package can access or inherit.
+
