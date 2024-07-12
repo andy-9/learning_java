@@ -470,4 +470,73 @@ Then this method makes the necessary changes to the fields. Method name begins w
   }
   ```
   But: this can be avoided, if in the superclass there is a constructor with no arguments: `    public Account() {}`. This means that we have two constructors in the parent class. If there is no constructor at all in the parent class, a constructor with no arguments is created by default.
-* **Method overriding**: A subclass overrides a method from its superclass (= different implementation for an inherited method). For a method to override another one it must have the same name, same parameters and same return type as the superclass method. You can call the method with `super.<methodName>(<args>)`.
+* **Method overriding**: A subclass overrides a method from its superclass (= different implementation for an inherited method). For a method to override another one it must have the same name, same parameters and same return type as the superclass method. You can call the method with `super.<methodName>(<args>)`. You can also annotate it with `@Override` on top of the methode name.
+
+
+### Polymorphism
+* Polymorphism means "many forms" --> an object can take the form of one of its supertypes.  
+  `Account account1 = new CheckingAccount(500, 0.025, 1000)`
+* Java treats objects based on the variables type, not the objects type. Taking the example above: It has all the methods and variables from `CheckingAccount`, not from `Account`.
+* Concept of Dynamic Dispatch: A call to a method will be directed to the underlying object method. In the aforementioned case this would `CheckingAccount`.
+* --> It's the variable type that determines what methods can be called, but it's the object type that determines what version of the method is called. If a class overwrites a method, Java will call that one instead of the base one.
+* We can store a bunch of different objects in a single collection. E.g.:
+  ```java
+  import java.util.ArrayList;
+  import accounts.SilverCheckingAccount;
+
+  ArrayList<Account> accounts = new ArrayList<>();
+  accounts.add(new SilverCheckingAccount(450, 0.015, 957));
+  accounts.add(new DiamondCheckingAccount(3200, 0.053, 19504));
+  accounts.add(new SavingsAccount(7241, 0.044));
+  accounts.add(new GoldCheckingAccount(5527, 0.038, 4823));
+  accounts.add(new CheckingAccount(838, 0.026, 7339));
+  accounts.add(new SavingsAccount(992, 0.040));
+  accounts.add(new Account(340, 0.019));
+  
+  for (Account account : accounts) {
+      account.status();
+      System.out.println();
+  }
+  ```
+
+### Abstract class
+* Class that cannot be instantiated --> no object creation possible. Its main purpose ist to be extended.
+  ```java
+  public abstract class Account {
+   ...
+  }
+  ```
+  Cannot be instantiated with `new Account()`
+* An abstract class can also contain abstract methods. Those methods do not have a body, e.g. `abstract void move()`. Because of this, subclasses are forced to override it because they need to provide the body themselves. Abstract methods can only exist in abstract classes.
+* If a class extends an abstract class, it must implement any and all of the abstract methods of the abstract class.
+
+
+### Interface
+* Create interface by creating a new file, but not clicking `Class`, but `Interface`. Shows green in IntelliJ.
+  ```java
+  public class Baz {
+    void m1();  // modifier "abstract" not necessary
+    boolean m2();
+    String m3(int pos, String tag);
+  }
+  ```
+* Like abstract classes, interfaces cannot be instantiated.
+* Interfaces typically contain only abstract methods. And they are `public` by default.
+* Interfaces are designed to be implemented by classes.
+  ```java
+  public class Foo implements Baz {
+    public void m1() {
+    }
+  
+    @Override
+    public boolean m2() {
+      return false;
+    }
+    
+    @Override
+    public String m3(int pos, String tag) {
+      return null;
+    }
+  }
+  ```
+  The class is required to implement the methods of the interface (= override). Can be easily done with one click.
