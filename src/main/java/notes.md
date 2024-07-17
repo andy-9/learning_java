@@ -522,7 +522,7 @@ Then this method makes the necessary changes to the fields. Method name begins w
   ```
 * Like abstract classes, interfaces cannot be instantiated.
 * Interfaces typically contain only abstract methods. And they are `public` by default.
-* Interfaces are designed to be implemented by classes.
+* Interfaces are designed to be implemented (not extended!) by classes.
   ```java
   public class Foo implements Baz {
     public void m1() {
@@ -540,3 +540,5 @@ Then this method makes the necessary changes to the fields. Method name begins w
   }
   ```
   The class is required to implement the methods of the interface (= override). Can be easily done with one click.
+* An interface and an abstract class can achieve the same thing. The difference is that abstract classes can still contain complex state and behavior utilizing instance variables (e.g. `public int x = 5;`) and non-abstract methods (e.g. `public void m4() {System.out.println();}`). Interfaces are designed for abstract methods only. They can contain static variables, but not instance variables.
+* Why use interfaces? Java only allows single inheritance: a class can only extend one other class. But a class can implement multiple interfaces. A class can extend another class und implement several interfaces all at the same time. E.g. `public class Foo extends Bar implements Baz, Buzz, Fuzz {}`
