@@ -17,4 +17,8 @@ public class Square implements Shape {
         System.out.println("|          |");
         System.out.println(" ---------- ");
     }
+
+    public String getShapeType() {
+        return "2D";
+    }
 }

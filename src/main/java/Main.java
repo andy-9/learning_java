@@ -33,5 +33,10 @@ public class Main {
         System.out.println(shape.getName());
         shape.draw();
         System.out.println("Sides: " + shape.getSideCount());
+        if (shape instanceof Square) {
+            Square square = (Square) shape;
+            System.out.println("Shape type: " + square.getShapeType());
+        }
+        System.out.println("");
     }
 }

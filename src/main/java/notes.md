@@ -77,6 +77,7 @@
 * **Enum**: define fixed set of values. Separated by commas and written in capital letters by convention because they are constants. Benefit: restricts the values to only those values that have been defined.
 
 ### Type casting/conversion
+* You can only cast up and down, not across types.
 * **implicit type casting**: byte -> short -> int -> long -> float -> double
 * **explicit type casting**: double -> float -> long -> int -> short -> byte
 * ```java
@@ -90,14 +91,23 @@
     double division = (double) num1 / num2; (3.3333333333333333)
   ```
 * `Integer.parseInt("123")` converts a String to an int.
-* `Integer.toString(123)` converts an int to a String.  
-  `String.valueOf(123)` converts an int to a String.  
+  * `Integer.toString(123)` converts an int to a String.  
+    `String.valueOf(123)` converts an int to a String.  
+* If you have an interface used by different classes, and you have e.g. one method in only one class, you can check for that class and do a type conversion to be able to use this method.  
+   ```java
+   static void displayShape(Shape shape) {
+     if (shape instanceof Square) {
+       Square square = (Square) shape;
+         System.out.println("Shape type: " + square.getShapeType());
+       }
+   }
+   ```
 
 
 ### Get type
-* ```java
+  ```java
   obj.getClass().getName()
-   ```
+  ```
 
 
 ## Conditions
