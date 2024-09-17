@@ -552,3 +552,102 @@ Then this method makes the necessary changes to the fields. Method name begins w
   The class is required to implement the methods of the interface (= override). Can be easily done with one click.
 * An interface and an abstract class can achieve the same thing. The difference is that abstract classes can still contain complex state and behavior utilizing instance variables (e.g. `public int x = 5;`) and non-abstract methods (e.g. `public void m4() {System.out.println();}`). Interfaces are designed for abstract methods only. They can contain static variables, but not instance variables.
 * Why use interfaces? Java only allows single inheritance: a class can only extend one other class. But a class can implement multiple interfaces. A class can extend another class und implement several interfaces all at the same time. E.g. `public class Foo extends Bar implements Baz, Buzz, Fuzz {}`
+
+
+## Difference Abstract Class, Interface and Mixin
+
+### Abstract class
+An abstract class is a class that is not designed to be instantiated. Abstract classes can have no implementation, some implementation, or  all implementation. Abstract classes are designed to allow its  subclasses share a common (default) implementation. A (pseudocoded)  example of an abstract class would be something like this
+
+```
+abstract class Shape {
+    def abstract area();  // abstract (unimplemented method)
+    def outline_width() = { return 1; }  // default implementation
+}
+```
+
+A subclass might look like
+
+```
+class Rectangle extends Shape {
+    int height = width = 5;
+    def override area() = { return height * width; }  // implements abstract method
+    // no need to override outline_width(), but may do so if needed
+}
+```
+
+Possible usage
+
+```
+def main() = {
+    Shape[] shapes = { new Rectangle(), new Oval() };
+    foreach (s in shapes) {
+        print("area: " + s.area() + ", outline width: " + s.outline_width());
+    }
+}
+```
+
+If a subclass does not override unimplemented methods, it is also an abstract class.
+
+### Interface
+
+In general computer science terms, an interface is the parts of a  program exposed to a client. Public classes and members are examples of  interfaces.
+
+Java and C# have a special `interface` keyword. These are  more or less an abstract class with no implementation. (There's  trickiness about constants, nested classes, explicit implementation, and access modifiers that I'm not going to get into.) Though the part about "no implementation" doesn't fit any more in Java, they added default  methods. The `interface` keyword can be seen as a reification of the interface concept.
+
+Going back to the Shape example
+
+```
+interface Shape {
+    def area();  // implicitly abstract so no need for abstract keyword
+    def outline_width();  // cannot implement any methods
+}
+
+class Rectangle implements Shape {
+    int height = width = 5;
+    def override area() = { return height * width; }
+    def override outline_width() = { return 1; }  // every method in interface must be implemented
+}
+
+def main() = {
+    Shape[] shapes = { new Rectangle(), new Oval() };
+    foreach (s in shapes) {
+        print("area: " + s.area() + ", outline width: " + s.outline_width());
+    }
+}
+```
+
+Java and C# do not allow multiple inheritance of classes with  implementation, but they do allow multiple interface implementation. Java and C# use interfaces as a workaround to the [Deadly Diamond of Death Problem](http://en.wikipedia.org/wiki/Diamond_problem#The_diamond_problem) found in languages that allow multiple inheritance (which isn't really that deadly, if properly handled).
+
+### Mixin
+
+A mixin (sometimes called a trait) allows multiple inheritance of  abstract classes. Mixins don't have the scary association that multiple inheritance has (due to C++ craziness), so people are more comfortable  using them. They have the same exact Deadly Diamond of Death Problem,  but languages that support them have more elegant ways of mitigating it  than C++ has, so they're perceived as better.
+
+Mixins are hailed as interfaces with [behavioral reuse](http://www.ibm.com/developerworks/java/library/j-scala04298/index.html#N101E3), [more flexible](http://www.levinotik.com/2012/09/14/scala-abstract-classes-traits-and-self-types/) interfaces, and [more powerful](http://lalitpant.blogspot.com/2008/07/traits-in-scala-powerful-design-tool.html) interfaces. You will notice all these have the term `interface` in them, referring to the Java and C# keyword. **Mixins are not interfaces.** They are multiple inheritance. With a prettier name.
+
+*This is not to say that mixins are bad. Multiple inheritance  isn't bad. The way C++ resolves multiple inheritance is what everyone  gets all worked up about.*
+
+On to the tired, old Shape example
+
+```
+mixin Shape {
+    def abstract area();
+    def outline_width() = { return 1; }
+}
+
+class Rectangle with Shape {
+    int height = width = 5;
+    def override area() = { return height * width; }
+}
+
+def main() = {
+    Shape[] shapes = { new Rectangle(), new Oval() };
+    foreach (s in shapes) {
+        print("area: " + s.area() + ", outline width: " + s.outline_width());
+    }
+}
+```
+
+You will notice there is no difference between this and the abstract class example.
+
+To be clear: Mixin\Traits are ways of extending functionality of a class (e.g add methods) without  using inheritance. The answer suggest they are the same thing, but  there are some important differences. 1. Mixins may be stateful, traits are stateless 2. Mixins use implicit conflict resolution, traits use  explicit conflict resolution (more  [stackoverflow.com/questions/925609/mixins-vs-traits](http://stackoverflow.com/questions/925609/mixins-vs-traits))
