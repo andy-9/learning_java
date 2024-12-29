@@ -284,6 +284,7 @@ obj.getClass().getName()
 
 - Objects have state and behavior.  
   State means data / the possibility to collect attributes.
+- Other definition: Each object has 3 dimensions: identity, attributes and behavior. Attributes describe the object's current state, and what the object is capable of doing is demonstrated through the object's behavior.
 - Objects are created from classes. It's possible to create as many objects as needed.
 - A class serves as a blueprint for creating objects.
 - Classes are written in Pascal case.
