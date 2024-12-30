@@ -16,7 +16,7 @@
 
 ### Primitive types
 
-- Variables of primitive types contain their value directly.
+- Variables of primitive types contain their value directly, i.e. primitive data types store the values assigned to them in the corresponding memory locations. 
 - **byte**: `byte a = 10;` 8-bit signed two's complement integer. It has a minimum value of -128 and a maximum value of 127 (inclusive). The byte data type can be useful for saving memory in large arrays, where the memory savings actually matters. They can also be used in place of int where their limits help to clarify your code; the fact that a variable's range is limited can serve as a form of documentation.
 - **short**: `short b = 2000;` 16-bit signed two's complement integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive). As with byte, the same guidelines apply: you can use a short to save memory in large arrays, in situations where the memory savings actually matters.
 - **int**: `int c = 42;` 32-bit signed two's complement integer. It has a minimum value of -2,147,483,648 and a maximum value of 2,147,483,647 (inclusive). For integral values, this data type is generally the default choice unless there is a reason (like the above) to choose something else. This data type will most likely be large enough for the numbers your program will use, but if you need a wider range of values, use long instead.
@@ -28,7 +28,7 @@
 
 ### Non-primitive/reference types
 
-- Variables of reference types contain references (and not the values directly).
+- Variables of reference types contain references (addresses) to the memory location where the corresponding data is stored. They do not store the values directly.
 - **String**: Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. For example:
   ```java
   String str = "abc";
