@@ -154,7 +154,16 @@ obj.getClass().getName()
 ## Variables
 
 - **Static Variables**  
-  Static variables are associated with the class itself rather than with any instance of the class. They are shared among all instances (objects) of the class. They are accessed using the class name, not through an object reference. They are initialized only once when the class is loaded into memory.
+  Static variables are associated with the class itself rather than with any instance of the class. This means that only one instance of a static member exists, even if you create multiple objects of the class, or if you don't create any. They are shared among all instances (objects) of the class. They are accessed using the class name, not through an object reference. They are initialized only once when the class is loaded into memory.  
+  Example:
+  ```java
+  public class Counter {
+    public static int COUNT=0;  // The COUNT variable will be shared by all objects of the class
+    COUNTER() {
+      COUNT++;
+    }
+  }
+  ```
 - **Non-Static (Instance) Variables**  
   Non-static variables belong to a specific instance (object) of the class. Each instance of the class has its own copy of the non-static variables. They are accessed using object references. They are initialized when an instance of the class is created using the `new` keyword.
 - Whether a variable should be static or non-static depends on the intended use and the design of your program. Global variables in Java are typically instance variables, and they are often not declared as static. They belong to an instance of the class and are used to maintain the state of individual objects.  
