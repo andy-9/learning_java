@@ -6,6 +6,12 @@
 - method names are lowercase (`main()`)
 - package names are lowercase and with dots or underscores (`com.example.myapp_1`). Dots indicate a hierarchy of packages (package `com` contains package example which contains package `myapp_1`).
 
+## Packages
+
+A package can be defined as a group made up of similar types of classes, along with sub-packages.  
+Packages are used to avoid name conflicts and to control access to classes.  
+It is possible to import all classes in a package with a wildcard (`import samples.*` imports all classes in the `samples` package).
+
 ## Variables
 
 - A literal is data that has been typed directly in the code (hardcoded, e.g. `String s = "Hello World!";`)
