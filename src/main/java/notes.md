@@ -345,7 +345,20 @@ obj.getClass().getName()
 
 ### Encapsulation
 
-- Idea: Encapsulate code inside classes.
+- Idea: Encapsulate code inside classes to ensure that implementation details are not visible to users. The variables of one class will be hidden from the other classes, accessible only through the methods of the current class. This is called 'data hiding'.
+- TO achieve encapsulation in Java, declare the class' variables as `private` and provide public `setter` and `getter`methods to modify and view the variables' values.
+  ```java
+  class BankAccount {
+    private double balance = 0;
+    
+    public void deposit (double x) {
+      if (x > 0) {
+        balance += x;
+      }
+    }
+  }
+  ```
+  This implementation hides the `balance` variable, enabling access to it only through the `deposit` method which validates the amount to be deposited before modifying the variable.
 - Encapsulate the functionality for every device in their own class.
 - Possible to restrict access to certain parts  
   --> then these parts are more encapsulated than the rest.  
@@ -371,6 +384,10 @@ obj.getClass().getName()
 - If it is not supposed to be `private`, it can be set to `public`.
 - If something isn't specified, it has default accessibility known as `package private`  
   --> accessible from anywhere in the same package.
+- Benefits of encapsulation:
+  - Control of the way data is accessed or modified
+  - More flexible and easily changed code
+  - Ability to change one part of the code without affecting other parts
 
 ### Constructors
 
